@@ -93,8 +93,12 @@
     训练得到模型后
 
     cd yolov5
+    
+    pip install onnx
+    pip install onnx-simplifier
+    pip install coremltools
 
-    python models/export.py --weights 训练得到的模型权重路径 --img-size 训练图片输入尺寸
+    python export.py --weights ../best.pt 训练得到的模型权重路径
 
     python3 -m onnxsim onnx模型名称 yolov5s-simple.onnx 得到最终简化后的onnx模型
     
